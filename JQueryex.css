@@ -1,0 +1,39 @@
+h1,p{
+	text-align: center;
+}
+
+label{
+	margin: 0 auto;
+}
+
+#left-wrapper{
+	float: left;
+	width: 50%;
+}
+
+#right-wrapper{
+	float:left;
+	width: 50%;
+}
+
+#clock{
+	text-align: center;
+}
+
+.clear{
+	clear:both;
+}
+
+.outerlight{
+	background-color: rgba(0,0,0,.5);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+}
+
+.innerlight{
+	text-align: center;
+}
+
