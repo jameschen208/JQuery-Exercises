@@ -5,19 +5,19 @@ $(document).ready(function(){
 		});
 /************************CLOCK************************/
 
-    setInterval(displayTime, 1000);
+    setInterval(displayTime, 100);
     function displayTime(){
     	var time = new Date();
-    	h = time.getHours();
-    	m = time.getMinutes();
-    	s = time.getSeconds();
+    	var h = time.getHours();
+    	var m = time.getMinutes();
+    	var s = time.getSeconds();
     		if (m < 10) {
     			m = "0" + m
     		};
     		if (s < 10) {
     			s = "0" + s
     		};
-		$("#clock").html(h+":"+m+":"+s)
+		$(".clock").html(h+":"+m+":"+s)
     };
 
 /************************IMAGE ANIMATION************************/	
@@ -30,18 +30,18 @@ $(document).ready(function(){
 	// 	left: "-600px"
 	// }, 6000);
 
-	// $("img#two").animate({
-	// 	opacity: .5,
-	// 	width: "500px",
-	// 	height: "700px"
-	// }, 2000, function() {
-	// })
+	$(".lightimg").animate({
+		opacity: .5,
+		width: "500px",
+		height: "700px"
+	}, 2000, function() {
+	})
 
 /************************LIGHT BOX************************/	
 	$(".lightboxlink").click(function(e){
 		/***variable images***/
 		var image = $(e.currentTarget).data("img");
-		console.log("checkpoint1")
+		/***add the body elements***/
 		$("body").append("<div class='outerlight'><div class='innerlight'><img class='lightimg' src='"+image+"'></div></div>")
 		/***center the innerbox***/
 			var page_height = $(window).height();
@@ -52,8 +52,24 @@ $(document).ready(function(){
 		$("div.outerlight, div.innerlight, .lightimg").click(function(){
 			$(".outerlight").remove()
 		});
-	})
+	});
+/************************CLOCK MODAL************************/
+	$(".clock").click(function(){
+		$("body").append("<div class='outerlight'><div class='innerlight'><p>STOP BOTHERING ME</p><div class='clock'></div></div></div>")
+			var page_height = $(window).height();
+			var image_height = $('.clock').height();
+			var image_offset = (page_height - image_height)/2;
+		// $text_transform = $(".clock");
+		$(".innerlight").css('font-size', '50px');
+		$(".innerlight").css('color', 'white');
+		$('.clock').parent().css('margin-top', image_offset);
+		$(".outerlight, .innerlight, .clock").click(function(){
+			$(".outerlight").remove();
+		});
+	});
 });
+
+
 
 
 

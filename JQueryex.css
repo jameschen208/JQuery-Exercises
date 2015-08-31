@@ -1,9 +1,5 @@
-h1,p{
+h1,h2,p,.clock{
 	text-align: center;
-}
-
-label{
-	margin: 0 auto;
 }
 
 #left-wrapper{
@@ -14,10 +10,6 @@ label{
 #right-wrapper{
 	float:left;
 	width: 50%;
-}
-
-#clock{
-	text-align: center;
 }
 
 .clear{
@@ -31,9 +23,12 @@ label{
 	position: fixed;
 	top: 0%;
 	left: 0%;
+	color: 
 }
 
 .innerlight{
 	text-align: center;
+	font-style: bold;
 }
+
 
